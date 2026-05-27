@@ -1,0 +1,88 @@
+{
+  "name": "@yavi/widgets",
+  "version": "0.0.0",
+  "description": "YAVI widgets library",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./styles.css": "./dist/index.css",
+    "./summary.css": "./dist/widgets/summary/summary.css",
+    "./linkedinpost.css": "./dist/widgets/linkedinpost/linkedinpost.css",
+    "./chatbot.css": "./dist/widgets/chatbot/styles/chatbot.css",
+    "./server/nextjs": {
+      "types": "./dist/server/nextjs.d.ts",
+      "import": "./dist/server/nextjs.js",
+      "require": "./dist/server/nextjs.cjs"
+    },
+    "./server/express": {
+      "types": "./dist/server/express.d.ts",
+      "import": "./dist/server/express.js",
+      "require": "./dist/server/express.cjs"
+    },
+    "./server": {
+      "types": "./dist/server/index.d.ts",
+      "import": "./dist/server/index.js",
+      "require": "./dist/server/index.cjs"
+    },
+    "./dist/chatbot.css": "./dist/widgets/chatbot/styles/chatbot.css",
+    "./dist/linkedinpost.css": "./dist/widgets/linkedinpost/linkedinpost.css",
+    "./dist/summary.css": "./dist/widgets/summary/summary.css",
+    "./dist/index.css": "./dist/index.css"
+  },
+  "peerDependencies": {
+    "mongodb": ">=5",
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "peerDependenciesMeta": {
+    "mongodb": {
+      "optional": true
+    }
+  },
+  "files": [
+    "dist",
+    "scripts"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "prepare": "npm run build",
+    "build:watch": "tsup --watch",
+    "dev": "npm run build && tsx server-dev.ts",
+    "dev:watch": "npm run build:watch & tsx server-dev.ts",
+    "postinstall": "node scripts/postinstall.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:yavi/widgets.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^20.19.41",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "express": "^4.18.2",
+    "mongodb": "^6.0.0",
+    "tsx": "^4.7.0",
+    "tsup": "^8.5.1",
+    "typescript": "^6.0.3"
+  },
+  "dependencies": {
+    "class-variance-authority": "^0.7.0",
+    "jwt-decode": "^4.0.0",
+    "react": ">=18"
+  }
+}
